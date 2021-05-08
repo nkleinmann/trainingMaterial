@@ -2,25 +2,17 @@
 
 [Header
   fullWidth:true
-  title:"My Idyll Post"
-  subtitle:"Welcome to Idyll. Open index.idyll to start writing"
-  author:"Your Name Here"
+  title:"Service-level agreements"
   authorLink:"https://idyll-lang.org"
-  date:`(new Date()).toDateString()`
-  background:"#222222"
+  background:"#003399"
   color:"#ffffff"
    /]
 
-## Introduction
+**Service level agreements (SLAs)** help organizations complete work 
+in a timely manner and enforce on-time performance by establishing 
+a deadline for work completion. These obligations can range from 
+informal response-time promises to negotiated contracts.
 
-This is an Idyll scrolly-telling post. It is generated via
-the file `index.idyll`. To compile this post using
-idyll, run the command `idyll` inside of this directory.
-
-Idyll posts are designed to support interaction and
-data-driven graphics.
-
-Configuration can be done via the `idyll` field in `package.json`.
 
 [var name:"state" value:0 /]
 
@@ -32,33 +24,21 @@ Configuration can be done via the `idyll` field in `package.json`.
 
   [Step]
 
-    ## Markup
+    ## *Service-level intervals*:
 
-    Idyll is based on Markdown.
+    For each **service-level agreement (SLA)**, there are four 
+    configurable intervals of time that standardize how long 
+    you have to perform a task:
+* start
+* goal
+* deadline
+* past deadline
 
-    You can use familiar syntax
-    to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
-
-* lists
-* of
-* items,
-
-    ```
-    * lists
-    * of
-    * items,
-    ```
-
-1. and numbered
-2. lists
-3. of items,
-
-
-    ```
-    1. and numbered
-    2. lists
-    3. of items,
-    ```
+    The goal and deadline intervals are calculated from the start 
+    interval. The past deadline interval can be repeated as many 
+    times as desired as it is an additional opportunity to escalate 
+    or take action when a task is late. The passed deadline interval 
+    is calculated from the end of the deadline interval.
 
     in addition to [hyperlinks](https://idyll-lang.org) and images:
 
@@ -68,6 +48,56 @@ Configuration can be done via the `idyll` field in `package.json`.
     ![quill](static/images/quill.svg)
     ```
   [/Step]
+
+  [Step]
+  ## Time sheet example:
+
+  For example, consider a company that uses a timesheet 
+  application where an employee can submit a timesheet for 
+  a manager’s review. The company wants to apply an SLA on 
+  the approval task for the manager to make sure that the 
+  timesheets are approved quickly. 
+
+  The start interval begins the moment the employee submits 
+  their timesheet and it is sent to the manager for approval. 
+  The goal interval is when the company would like for that 
+  time sheet to be approved by the manager, such as 48 hours. 
+  The deadline interval is when the company requires the timesheet 
+  to be approved by, such as 72 hours. The approval is considered 
+  late after the deadline interval passes. The past deadline 
+  interval can be repeated multiple times.
+
+  The company decides to set a past deadline interval to occur 
+  every hour after the deadline and to repeat three times 
+  (so notify 3 times). The company decides to increase urgency 
+  by 20 when the goal interval occurs, by 30 when the deadline 
+  interval elapses, and by 15 each time the past deadline interval 
+  elapses. (Show in diagram, use sketch in notebook to help, note 
+  that it would be great to have interactive diagram or video here)
+
+  [/Step]
+
+  [Step]
+  ## Escalation actions:
+
+  At the start of each service level interval, you can configure 
+  one or more of the following four actions to occur: 
+* Increase the urgency level of the task 
+* Notify the manager
+* Reassign the task to another party
+* Auto-approve the task
+  [/Step]
+
+  [Step]
+  ## Urgency
+
+  The urgency value 
+  is used to prioritize the task over tasks with lower urgency 
+  values. Higher priority tasks are listed first in the User 
+  Portal in Pega. Tasks start with an urgency level of 10 
+  by default, but can range from 10-100.
+  [/Step]
+
 
   [Step]
     ## Components
