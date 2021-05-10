@@ -1,4 +1,4 @@
-[meta title:"My Idyll Post" description:"Short description of your project" /]
+[meta title:"SLAs" description:"Training material for SLAs" /]
 
 [Header
   fullWidth:true
@@ -32,10 +32,10 @@
 * **start**: when the clock starts ticking
 * **goal**: when the task *should* be completed by
 * **deadline**: when the task *must* be completed by
-* **past deadline**: when the task is passed the deadline
+* **past deadline**: when the task is past the deadline
 
     The goal and deadline intervals are calculated from the start 
-    interval. The passed deadline interval 
+    interval. The past deadline interval 
     is calculated from the end of the deadline interval and can be repeated as many 
     times as desired as it is an additional opportunity to escalate 
     or take action when a task is late. 
@@ -90,10 +90,10 @@ Example of when urgency level is set to a constant value of 10:
   (Ideally have interactive photo where students can click on relevant part of information and
   get the below information or video)
 
-* The start interval begins the moment the employee submits their timesheet and it is sent to the manager for approval. In this case an employee submits timesheet for review at 10am on Monday.
-* The goal interval is when the company would like for that time sheet to be approved by the manager, in this case 48 hours so 10am on Wednesday. The company decides to increase the urgency by 20 when the goal interval occurs.
-* The deadline interval is when the company requires the timesheet to be approved by, in this case 72 hours so 10am on Thursday. The approval is considered late after the deadline interval passes. The company decides to increase urgency by 30 when the deadline interval elapses.
-* The past deadline interval can be repeated multiple times. In this case, the company decides to set a past deadline interval to occur every hour after the deadline and to repeat three times (so notify 3 times at 11am, 12pm, on 1pm on Thursday). The company decides to increase urgency by 15 each time the past deadline interval elapses. 
+* The start interval begins the moment the employee submits their timesheet and it is sent to the manager for approval. In this case, an employee submits the timesheet for review at 10 am on Monday.
+* The goal interval is when the company would like for that time sheet to be approved by the manager, in this case 48 hours so 10 am on Wednesday. The company decides to increase the urgency by 20 when the goal interval occurs.
+* The deadline interval is when the company requires the timesheet to be approved by, in this case 72 hours so 10 am on Thursday. The approval is considered late after the deadline interval passes. The company decides to increase urgency by 30 when the deadline interval elapses.
+* The past deadline interval can be repeated multiple times. In this case, the company decides to set a past deadline interval to occur every hour after the deadline and to repeat three times (so notify 3 times at 11 am, 12 pm, on 1 pm on Thursday). The company decides to increase urgency by 15 each time the past deadline interval elapses. 
 
   [/Step]
 
@@ -110,13 +110,13 @@ Example of when urgency level is set to a constant value of 10:
 [var name:"myVarB" value:false /]
 [var name:"myVarC" value:false /]
 
-[Boolean value:myVar /] Helps manager manage tasks based on urgency. [Display value:`myVar ? "True" : ""  `/]
+[Boolean value:myVar /] Helps managers manage tasks based on urgency. [Display value:`myVar ? "True" : ""  `/]
 
 [Boolean value:myVarA /] Helps companies train employees. [Display value:`myVarA ? "False" : ""  `/]
 
-[Boolean value:myVarB /] Increase on-time performance at company. [Display value:`myVarB ? "True" : ""  `/]
+[Boolean value:myVarB /] Increases on-time performance at company. [Display value:`myVarB ? "True" : ""  `/]
 
-[Boolean value:myVarC /] Improve user experience of company's product.  [Display value:`myVarC ? "False" : ""  `/]
+[Boolean value:myVarC /] Improves user experience of company's product.  [Display value:`myVarC ? "False" : ""  `/]
 
 
 
@@ -140,4 +140,3 @@ Example of when urgency level is set to a constant value of 10:
 
 [/Scroller]
 ![pega](static/images/pega.jpg)
-
