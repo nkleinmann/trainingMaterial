@@ -3,14 +3,14 @@
 [Header
   fullWidth:true
   title:"Service-level agreements"
-  subtitle: "Goal - Explain the business value and describe the full functionality of service level agreements in Pega."
+  subtitle: "Goal - Explain the business value and describe the full functionality of service-level agreements in Pega."
   authorLink:"https://idyll-lang.org"
   background:"#809fff"
   color:"#ffffff"
    /]
 
 
-  **Service level agreements (SLAs)** help organizations complete work in a 
+  **Service-level agreements (SLAs)** help organizations complete work in a 
   timely manner and enforce on-time performance by establishing a deadline 
   for work completion. These obligations can range from informal response-time 
   promises to negotiated contracts.
@@ -93,7 +93,7 @@ Example of when urgency level is set to a constant value of 10:
 * The start interval begins the moment the employee submits their timesheet and it is sent to the manager for approval. In this case an employee submits timesheet for review at 10am on Monday.
 * The goal interval is when the company would like for that time sheet to be approved by the manager, in this case 48 hours so 10am on Wednesday. The company decides to increase the urgency by 20 when the goal interval occurs.
 * The deadline interval is when the company requires the timesheet to be approved by, in this case 72 hours so 10am on Thursday. The approval is considered late after the deadline interval passes. The company decides to increase urgency by 30 when the deadline interval elapses.
-* The past deadline interval can be repeated multiple times. In this case, the company decides to set a past deadline interval to occur every hour after the deadline and to repeat three times (so notify 3 times at 11am, 12pm, on 1pm on Thursday). The company decides to increase urgency by by 15 each time the past deadline interval elapses. 
+* The past deadline interval can be repeated multiple times. In this case, the company decides to set a past deadline interval to occur every hour after the deadline and to repeat three times (so notify 3 times at 11am, 12pm, on 1pm on Thursday). The company decides to increase urgency by 15 each time the past deadline interval elapses. 
 
   [/Step]
 
