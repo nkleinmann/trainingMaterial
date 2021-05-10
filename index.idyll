@@ -98,10 +98,10 @@ Example of when urgency level is set to a constant value of 10:
   [/Step]
 
   [Step]
-  ## Quiz
+## Quiz
 
 
-1. What is the business value of the SLAs in Pega? 
+### What is the business value of the SLAs in Pega? 
 
 (Select all that apply)
 
@@ -119,25 +119,26 @@ Example of when urgency level is set to a constant value of 10:
 [Boolean value:myVarC /] Improve user experience of company's product.  [Display value:`myVarC ? "False" : ""  `/]
 
 
-2. What is a service-level agreement?
+
+### What is a service-level agreement?
 
 [var name:"myVariable" value:false /]
 [var name:"myVariableA" value:false /]
 [var name:"myVariableB" value:false /]
 [var name:"myVariableC" value:false /]
 
-[Boolean value:myVariable /] A SLA establishes a way to increase company security. [Display value:`myVar ? "False" : ""  `/]
+[Boolean value:myVariable /] A SLA establishes a way to increase company security. [Display value:`myVariable ? "False" : ""  `/]
 
-[Boolean value:myVariableA /] A SLA establishes a work completion deadline. [Display value:`myVarA ? "True" : ""  `/]
+[Boolean value:myVariableA /] A SLA establishes a work completion deadline. [Display value:`myVariableA ? "True" : ""  `/]
 
-[Boolean value:myVariableB /] A SLA establishes a training plan for employees. [Display value:`myVarB ? "False" : ""  `/]
+[Boolean value:myVariableB /] A SLA establishes a training plan for employees. [Display value:`myVariableB ? "False" : ""  `/]
 
-[Boolean value:myVariableC /] A SLA establishes a way to generate service-level reports for each employee.  [Display value:`myVarC ? "False" : ""  `/]
+[Boolean value:myVariableC /] A SLA establishes a way to generate service-level reports for each employee.  [Display value:`myVariableC ? "False" : ""  `/]
   
   [/Step]
 
 
-
-[/Scroller]
 ![pega](static/images/pega.jpg)
+[/Scroller]
+
 
