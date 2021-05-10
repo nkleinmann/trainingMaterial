@@ -3,24 +3,24 @@
 [Header
   fullWidth:true
   title:"Service-level agreements"
+  subtitle: "Goal - Explain the business value and describe the full functionality of service level agreements in Pega."
   authorLink:"https://idyll-lang.org"
-  background:"#003399"
+  background:"#809fff"
   color:"#ffffff"
    /]
 
-**Service level agreements (SLAs)** help organizations complete work 
-in a timely manner and enforce on-time performance by establishing 
-a deadline for work completion. These obligations can range from 
-informal response-time promises to negotiated contracts.
 
+  **Service level agreements (SLAs)** help organizations complete work in a 
+  timely manner and enforce on-time performance by establishing a deadline 
+  for work completion. These obligations can range from informal response-time 
+  promises to negotiated contracts.
 
-[var name:"state" value:0 /]
+  ![clock](static/images/clock1.jpg)
+  (Ideally insert a video that describes the info described on this page:
+  SLAs, service-level intervals, urgency, escalation actions, and time sheet example.)
+  
 
-[Scroller currentStep:state]
-
-  [Graphic className:"d3-component-container"]
-    [CustomD3Component className:"d3-component" state:`state+1` /]
-  [/Graphic]
+[Scroller]
 
   [Step]
 
@@ -29,55 +29,44 @@ informal response-time promises to negotiated contracts.
     For each **service-level agreement (SLA)**, there are four 
     configurable intervals of time that standardize how long 
     you have to perform a task:
-* start
-* goal
-* deadline
-* past deadline
+* **start**: when the clock starts ticking
+* **goal**: when the task *should* be completed by
+* **deadline**: when the task *must* be completed by
+* **past deadline**: when the task is passed the deadline
 
     The goal and deadline intervals are calculated from the start 
-    interval. The past deadline interval can be repeated as many 
+    interval. The passed deadline interval 
+    is calculated from the end of the deadline interval and can be repeated as many 
     times as desired as it is an additional opportunity to escalate 
-    or take action when a task is late. The passed deadline interval 
-    is calculated from the end of the deadline interval.
-
-    in addition to [hyperlinks](https://idyll-lang.org) and images:
-
-    ![quill](static/images/quill.svg)
-
-    ```
-    ![quill](static/images/quill.svg)
-    ```
-  [/Step]
-
-  [Step]
-  ## Time sheet example:
-
-  For example, consider a company that uses a timesheet 
-  application where an employee can submit a timesheet for 
-  a manager’s review. The company wants to apply an SLA on 
-  the approval task for the manager to make sure that the 
-  timesheets are approved quickly. 
-
-  The start interval begins the moment the employee submits 
-  their timesheet and it is sent to the manager for approval. 
-  The goal interval is when the company would like for that 
-  time sheet to be approved by the manager, such as 48 hours. 
-  The deadline interval is when the company requires the timesheet 
-  to be approved by, such as 72 hours. The approval is considered 
-  late after the deadline interval passes. The past deadline 
-  interval can be repeated multiple times.
-
-  The company decides to set a past deadline interval to occur 
-  every hour after the deadline and to repeat three times 
-  (so notify 3 times). The company decides to increase urgency 
-  by 20 when the goal interval occurs, by 30 when the deadline 
-  interval elapses, and by 15 each time the past deadline interval 
-  elapses. (Show in diagram, use sketch in notebook to help, note 
-  that it would be great to have interactive diagram or video here)
+    or take action when a task is late. 
 
   [/Step]
 
   [Step]
+   ## Urgency
+
+  The urgency value is used to prioritize tasks with higher urgency values over 
+  tasks with lower urgency 
+  values. Tasks start with an urgency level of 10 by default, 
+  but can range from 10-100 and can change value at different service-level intervals.
+
+  Higher priority tasks are listed first in the User 
+  Portal in Pega.     
+
+  [var name:"showChart" value:false /]
+
+[Button onClick:`showChart = !showChart`]
+  [Display value:`showChart ? 'Hide urgency level example' : 'Show urgency level example' ` /]
+[/Button]
+
+[Conditional if:`showChart`]
+Example of when urgency level is set to a constant value of 10:
+  ![urgency](static/images/urgency4.jpg)
+  (Ideally have interactive piece where students could change the amount the urgency increases by at each service-level interval and the urgency value would update)
+[/Conditional]
+  [/Step]
+
+    [Step]
   ## Escalation actions:
 
   At the start of each service level interval, you can configure 
@@ -89,111 +78,52 @@ informal response-time promises to negotiated contracts.
   [/Step]
 
   [Step]
-  ## Urgency
+  ## SLA in action:
 
-  The urgency value 
-  is used to prioritize the task over tasks with lower urgency 
-  values. Higher priority tasks are listed first in the User 
-  Portal in Pega. Tasks start with an urgency level of 10 
-  by default, but can range from 10-100.
-  [/Step]
+  Consider a company that uses a timesheet 
+  application where an employee can submit a timesheet for 
+  a manager’s review. The company wants to apply an SLA on 
+  the approval task for the manager to make sure that the 
+  timesheets are approved quickly. 
 
+  ![urgency](static/images/urgency5.png)
+  (Ideally have interactive photo where students can click on relevant part of information and
+  get the below information or video)
 
-  [Step]
-    ## Components
-
-    Components can be embedded using a bracket syntax:
-
-    ```
-    [Range /]
-    ```
-
-    and can contain nested content:
-
-    ```
-    [Equation]e = mc^{2}[/Equation]
-    ```
-
-    Components accept properties:
-
-    ```
-    [Range value:x min:0 max:1 /]
-    ```
-
-    that can be bound to variables to achieve interactivity (more in next section).
-
-
-    A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/). You can also use any html tag, for example: `[div] A div! [/div]`.
-
-    To create your own, add it to the `components/` folder. There are examples of how to use Idyll with React and D3 based components already included.
+* The start interval begins the moment the employee submits their timesheet and it is sent to the manager for approval. In this case an employee submits timesheet for review at 10am on Monday.
+* The goal interval is when the company would like for that time sheet to be approved by the manager, in this case 48 hours so 10am on Wednesday. The company decides to increase the urgency by 20 when the goal interval occurs.
+* The deadline interval is when the company requires the timesheet to be approved by, in this case 72 hours so 10am on Thursday. The approval is considered late after the deadline interval passes. The company decides to increase urgency by 30 when the deadline interval elapses.
+* The past deadline interval can be repeated multiple times. In this case, the company decides to set a past deadline interval to occur every hour after the deadline and to repeat three times (so notify 3 times at 11am, 12pm, on 1pm on Thursday). The company decides to increase urgency by by 15 each time the past deadline interval elapses. 
 
   [/Step]
 
   [Step]
-    ## Interactivity
+  What is the business value of the SLAs in Pega? 
 
-    Here is how you can instantiate a variable and bind it to a component:
+(Select all that apply)
 
-    [var name:"exampleVar" value:5 /]
+[var name:"myVar" value:false /]
+[var name:"myVarA" value:false /]
+[var name:"myVarB" value:false /]
+[var name:"myVarC" value:false /]
 
-    [Range min:0 max:10 value:exampleVar /]
-    [Display value:exampleVar /]
+[Boolean value:myVar /] Helps manager manage tasks based on urgency. [Display value:`myVar ? "True" : ""  `/]
 
-    ```
-    [var name:"exampleVar" value:5 /]
+[Boolean value:myVarA /] Helps companies train employees. [Display value:`myVarA ? "False" : ""  `/]
 
-    [Range min:0 max:10 value:exampleVar /]
-    [Display value:exampleVar /]
-    ```
+[Boolean value:myVarB /] Increase on-time performance at company. [Display value:`myVarB ? "True" : ""  `/]
+
+[Boolean value:myVarC /] Improve user experience of company's product.  [Display value:`myVarC ? "False" : ""  `/]
+
+
+What is a service-level agreement?
+
+[var name:"selectVal" value:"test1" /]
+[Select value:selectVal options:`["A SLA establishes a technical framework to follow.", "A SLA establishes a work completion deadline.", "A SLA establishes a training plan for employees.", "A SLA establishes a way to generate service-level reports."]`  /]
   [/Step]
+
+
 
 [/Scroller]
+![pega](static/images/pega.jpg)
 
-[Scroller]
-
-  [Step]
-
-    ##Scroller
-
-    The `Scroller` component is used to create scroll-based presentations. It can be used to create scrollytelling articles similar to this.
-    It takes a property `currentStep` which is updated when the user scrolls to a different step.
-
-    A persistent graphic may also provided using the `Graphic` component in order to create visualizations.
-
-  [/Step]
-
-  [Step]
-
-    ## Learn More
-
-    To learn more see the documentation at [https://idyll-lang.org/docs/](https://idyll-lang.org/docs/),
-    join our [chatroom](https://gitter.im/idyll-lang/Lobby), or see the project on [GitHub](https://github.com/idyll-lang/idyll).
-  [hr /]
-
-  [/Step]
-
-[/Scroller]
-
-[br/]
-# Technical Details
-
-## Installation
-
-- Make sure you have `idyll` installed (`npm i -g idyll`).
-- Clone this repo and run `npm install`.
-
-## Developing a post locally
-
-Run `idyll`.
-
-## Building a post for production
-
-Run `idyll build`. The output will appear in the top-level `build` folder. To change the output location, change the `output` option in `package.json`.
-
-## Deploying
-
-Make sure your post has been built, then deploy the docs folder via any static hosting service.
-
-## Dependencies
-
-You can install custom dependencies by running `npm install <package-name> --save`. Note that any collaborators will also need download the package locally by running `npm install` after pulling the changes.
