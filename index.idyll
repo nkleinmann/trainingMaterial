@@ -134,11 +134,10 @@ Example of when urgency level is set to a constant value of 10:
 [Boolean value:myVariableB /] A SLA establishes a training plan for employees. [Display value:`myVariableB ? "False" : ""  `/]
 
 [Boolean value:myVariableC /] A SLA establishes a way to generate service-level reports for each employee.  [Display value:`myVariableC ? "False" : ""  `/]
+
   
   [/Step]
 
-
-![pega](static/images/pega.jpg)
 [/Scroller]
-
+![pega](static/images/pega.jpg)
 
